@@ -10,21 +10,10 @@
 </nav>
 <div class="card"id="garbageBins">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #1</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #2</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #3</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #14</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #1354</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #123</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #671</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #6781</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #561</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #781</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #991</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #671</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #561</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #451</li>
-    <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #891</li>
+
+    <% for idx in (1..40) %>
+      <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #<%= idx%></li>
+<% end %>
   </ul>
 </div>
 
