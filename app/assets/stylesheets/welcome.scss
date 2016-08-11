@@ -1,3 +1,24 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#garbageBins {
+  display: inline-block;
+  width: 50%;
+}
+
+#map-container {
+  display: inline-block;
+  float: right;
+  width: 50%;
+}
+
+#map {
+  width: auto;
+  height: 400px;
+}
+
+ul {
+  width: auto;
+  max-height: 400px;
+  overflow-y: scroll;
+}

@@ -3,11 +3,28 @@
 <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 <!-- <%= javascript_include_tag 'welcome'%> -->
 <h1>Smart Waste Collection System</h1>
-<div id="garbageBins">
+<div class="card"id="garbageBins">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Bin #1</li>
+    <li class="list-group-item">Bin #2</li>
+    <li class="list-group-item">Bin #3</li>
+    <li class="list-group-item">Bin #14</li>
+    <li class="list-group-item">Bin #1354</li>
+    <li class="list-group-item">Bin #123</li>
+    <li class="list-group-item">Bin #671</li>
+    <li class="list-group-item">Bin #6781</li>
+    <li class="list-group-item">Bin #561</li>
+    <li class="list-group-item">Bin #781</li>
+    <li class="list-group-item">Bin #991</li>
+    <li class="list-group-item">Bin #671</li>
+    <li class="list-group-item">Bin #561</li>
+    <li class="list-group-item">Bin #451</li>
+    <li class="list-group-item">Bin #891</li>
+  </ul>
 </div>
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+<div id="map-container">
+  <div id="map"></div>
 </div>
 
 
@@ -17,8 +34,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers([
     {
       "lat": 12.9716,
-      "lng": 77.5946,
-      "infowindow": "Bengaluru"
+      "lng": 77.5946
     }
   ]);
   handler.bounds.extendWith(markers);
