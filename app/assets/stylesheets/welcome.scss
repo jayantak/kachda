@@ -1,6 +1,9 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+    box-sizing: border-box;
+}
 #garbageBins {
   display: inline-block;
   width: 50%;
@@ -36,4 +39,20 @@ ul {
   display: inline-block;
   max-width: 80px;
   max-height:80px;
+}
+
+@media screen and (max-width: 720px){
+ #map-container{
+  width:100%;
+  }
+  #garbageBins{
+  width:100%;
+  }
+  .navbar{
+  min-height:40px;
+  }
+  .navbar-brand{
+  font-size:18px;
+  line-height:20px;
+  }
 }
