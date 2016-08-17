@@ -44,6 +44,7 @@ ul {
 #globeIcon {
   max-width: 42px;
   max-height: 42px;
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 720px){
@@ -57,14 +58,18 @@ ul {
   min-height:40px;
   }
   .navbar-brand{
+    display: inline-block;
   font-size:18px;
   line-height:20px;
   }
-
-  #globeIcon {
+  #globeIcon{
+    width: 25px;
+    height: 25px;
+  }
+  .navbar-right{
     display: inline-block;
-    max-width: 20px;
-    max-height: 20px;
+    max-width: 10px;
+    max-height: 10px;
   }
   .list-group-item{
     height: 50px;
