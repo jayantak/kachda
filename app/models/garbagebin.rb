@@ -1,0 +1,2 @@
+class Garbagebin < ApplicationRecord
+end

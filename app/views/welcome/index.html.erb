@@ -8,13 +8,13 @@
     <div class="navbar-header">
         <a class="navbar-brand" href="#">Smart Waste Management System</a>
     </div>
-    <!-- <a class="navbar-brand navbar-right" href="#map-container"><img id="globeIcon" src="White_Globe_Icon.png" alt="Go To Map"></a> -->
+    
 </nav>
 <div class="card" id="garbageBins">
     <ul class="list-group list-group-flush">
 
-        <% for idx in (1..40) %>
-        <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbspBin #<%= idx%></li>
+        <% for bin in @bins %>
+        <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbsp <%= bin.sim%></li>
         <% end %>
   </ul>
 </div>
@@ -24,8 +24,9 @@
 </div>
 
 <img id="logo" src="tw_logo_black.png">
-
 <script type="text/javascript" charset="utf-8">
+    // var garbagebins = "<%= @garbagebins %>";
+    // alert(garbagebins);
     handler = Gmaps.build('Google');
     handler.buildMap({
         provider: {},
@@ -33,13 +34,14 @@
             id: 'map'
         }
     }, function () {
+        
         markers = handler.addMarkers([
             {
+                // "lat": bins.lat,
+                // "lng": bins.long
+
                 "lat": 12.9716,
                 "lng": 77.5946
-            }, {
-                "lat": 12.9166,
-                "lng": 77.6101
             }
         ]);
         handler.bounds.extendWith(markers);
