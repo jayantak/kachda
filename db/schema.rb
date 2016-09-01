@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817143225) do
+ActiveRecord::Schema.define(version: 20160901055548) do
 
   create_table "binInfo", primary_key: "simNo", id: :string, limit: 30, force: :cascade do |t|
     t.decimal "latitude"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20160817143225) do
 
   create_table "bins", force: :cascade do |t|
     t.string   "sim"
-    t.decimal  "lat"
-    t.decimal  "long"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

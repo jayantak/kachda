@@ -29,6 +29,10 @@ gem 'gmaps4rails'
 
 gem 'underscore-rails'
 
+gem 'twilio-ruby'
+
+gem 'geocoder'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

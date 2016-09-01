@@ -1,3 +1,3 @@
 class Bin < ApplicationRecord
-	self.primary_key = "sim"
+	self.primary_key = "id"
 end
