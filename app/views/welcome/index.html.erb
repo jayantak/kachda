@@ -5,65 +5,64 @@
 
 <nav class="navbar navbar-default">
   <a class="navbar-brand navbar-right" href="#map-container"><img id="globeIcon" src="White_Globe_Icon.png" alt="Go To Map"></a>
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#">Smart Waste Management System</a>
-    </div>
-    
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Smart Waste Management System</a>
+  </div>
+
 </nav>
 <div class="card" id="garbageBins">
-    <ul class="list-group list-group-flush">
+  <ul class="list-group list-group-flush">
 
-        <% for bin in @bins %>
+    <% for bin in @bins %>
         <% if bin.status == 'Full' %>
-        <li class="list-group-item"><img src="black-bin.png" id="bin">&nbsp&nbsp <%= Geocoder.address("#{bin.latitude},#{bin.longitude}")%></li>
+            <li class="list-group-item">
+              <img src="black-bin.png" id="bin">&nbsp&nbsp <%= Geocoder.address("#{bin.latitude},#{bin.longitude}") %>
+            </li>
         <% end %>
-        <% end %>
+    <% end %>
   </ul>
 </div>
 
 <div id="map-container">
-    <div id="map"></div>
+  <div id="map"></div>
 </div>
 
 <img id="logo" src="tw_logo_black.png">
-<%= flash[:message]%>
+<%= flash[:message] %>
 <script type="text/javascript" charset="utf-8">
-    
-    // alert(garbagebins);
-    handler = Gmaps.build('Google');
-    handler.buildMap({
-        provider: {},
-        internal: {
-            id: 'map'
-        }
-    }, function () {
-        
-        markers = handler.addMarkers([
-            {
-                "lat": garbagebins.latitude,
-                "lng": garbagebins.longitude
 
-                // "lat": 12.9716,
-                // "lng": 77.5946
-            }
-        ]);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
+  // alert(garbagebins);
+  handler = Gmaps.build('Google');
+  handler.buildMap({
+    provider: {},
+    internal: {
+      id: 'map'
+    }
+  }, function () {
+
+    markers = handler.addMarkers([
+      {
+        "lat": <%= @bins[0].latitude %>,
+        "lng": <%= @bins[0].longitude %>
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+  $(function () {
+    $('a[href*="#"]:not([href="#"])').click(function () {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length
+            ? target
+            : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
     });
-    $(function () {
-        $('a[href*="#"]:not([href="#"])').click(function () {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length
-                    ? target
-                    : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
+  });
 </script>
