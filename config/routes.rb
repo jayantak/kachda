@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  #post 'welcome/reply'
+  #get 'welcome/index'
+  post 'welcome/reply'
  #  resource :welcome do
  #  		collection do
  #    	post 'reply'
